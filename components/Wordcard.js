@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native";
 export default function Wordcard({ sentence }) {
   const handleCardPress = () => {
     Speech.speak(sentence, {
-      language: "hr", // Specify language code for French
+      language: "hr",
     });
   };
 
@@ -19,12 +19,12 @@ export default function Wordcard({ sentence }) {
     Tts.stop();
   };
   return (
-    <TouchableOpacity onPress={handleCardPress}>
-      <View style={styles.card}>
+    <View style={styles.card}>
+      <TouchableOpacity onPress={handleCardPress}>
         <AntDesign name="sound" size={24} color="black" />
         <Text style={styles.cardText}>{sentence}</Text>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   );
 }
 
