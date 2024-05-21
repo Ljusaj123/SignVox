@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { forwardRef } from "react";
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
 import { Home, Video, DefinedSentences } from "./pages";
@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import Toast from "react-native-toast-message";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,6 +42,7 @@ export default function App() {
           }}
         />
       </Tab.Navigator>
+      <Toast forwardRef={(ref) => Toast.setRef(ref)} />
     </NavigationContainer>
   );
 }
