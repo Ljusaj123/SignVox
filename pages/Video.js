@@ -1,4 +1,4 @@
-import { Text, StatusBar, StyleSheet, View, ScrollView } from "react-native";
+import { Text, StyleSheet, View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Video() {
