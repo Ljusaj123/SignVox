@@ -50,3 +50,16 @@ export default function App() {
 }
 
 AppRegistry.registerComponent(appName, () => Main);
+
+// import { StyleSheet, Text, View } from "react-native";
+// import React from "react";
+// import SignIn from "./pages/SignIn";
+// import SignUp from "./pages/SignUp"; //group this
+// const App = () => {
+//   return <SignUp />;
+//   return <SignIn />;
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({});

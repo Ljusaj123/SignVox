@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { purple, purpleExtra, smokewhite, smokewhiteExtra } from "./colors";
-import { MediumFont, HeaderMedium, NormalFont } from "./fonts";
+import { purple, purpleExtra, smokewhiteExtra } from "../customs/colors";
+import { MediumFont, HeaderMedium, NormalFont } from "../customs/fonts";
 /////////
 import { Feather } from "@expo/vector-icons";
 
@@ -31,7 +31,9 @@ const FriendsProfile = ({ image, name, date }) => {
       />
       <View>
         <HeaderMedium>{name}</HeaderMedium>
-        <NormalFont>Last time called: {date} </NormalFont>
+        <NormalFont style={{ color: smokewhiteExtra }}>
+          Last time called: {date}
+        </NormalFont>
       </View>
 
       <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>

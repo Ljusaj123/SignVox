@@ -17,7 +17,7 @@ import {
   Friends,
   FriendsProfile,
   RecentCallProfile,
-} from "../customs/stackComponents";
+} from "../components/StackComponents";
 import {
   purpleExtra,
   smokewhite,
@@ -60,6 +60,7 @@ const Home = () => {
       />
       <HeaderFont>Friends</HeaderFont>
       <FlatList // Will fix in future because it doesn't scroll through all items and  right position of it
+        showsVerticalScrollIndicator={false}
         style={styles.friendsContainer}
         data={friends}
         renderItem={({ item }) => (
