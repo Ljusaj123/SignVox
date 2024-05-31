@@ -26,7 +26,7 @@ import { Link } from "@react-navigation/native";
 
 const Authenitcation = ({ isSignUp }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <LinearGradient
         // Background Linear Gradient
         colors={["#F4EEFF", "#424874"]}
@@ -115,7 +115,7 @@ const Authenitcation = ({ isSignUp }) => {
           </View>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

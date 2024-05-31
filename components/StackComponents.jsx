@@ -1,9 +1,10 @@
-import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { purple, purpleExtra, smokewhiteExtra } from "../customs/colors";
 import { MediumFont, HeaderMedium, NormalFont } from "../customs/fonts";
 /////////
 import { Feather } from "@expo/vector-icons";
+import { LogicCntx } from "../contexes/LogicContext";
 
 const RecentCallProfile = ({ text, image }) => {
   return (
@@ -21,6 +22,8 @@ const RecentCallProfile = ({ text, image }) => {
 
 const FriendsProfile = ({ image, name, date }) => {
   //Chnage variable names I have zero imagination for naming them
+
+  const { setUserInfoDisplay } = useContext(LogicCntx);
   return (
     <View style={styles.friendsContainer}>
       <Image
@@ -38,7 +41,9 @@ const FriendsProfile = ({ image, name, date }) => {
 
       <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>
         <Feather name="video" size={26} color={purpleExtra} />
-        <Feather name="info" size={26} color={purpleExtra} />
+        <Pressable onPress={() => setUserInfoDisplay(true)}>
+          <Feather name="info" size={26} color={purpleExtra} />
+        </Pressable>
       </View>
     </View>
   );
@@ -53,7 +58,7 @@ const styles = StyleSheet.create({
   rCImg: {
     width: 80,
     height: 80,
-    borderRadius: 50,
+    borderRadius: 80,
   },
   friendsContainer: {
     flexDirection: "row",

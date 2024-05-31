@@ -56,7 +56,7 @@ const Home = () => {
         renderItem={({ item }) => (
           <RecentCallProfile text={item.name} image={item.img} />
         )}
-        // keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id}
       />
       <HeaderFont>Friends</HeaderFont>
       <FlatList // Will fix in future because it doesn't scroll through all items and  right position of it
@@ -70,7 +70,7 @@ const Home = () => {
             date={item.lastTimeCalled}
           />
         )}
-        // keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );

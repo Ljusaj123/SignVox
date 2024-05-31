@@ -8,44 +8,50 @@ import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import LogicContext from "./contexes/LogicContext";
+import ProfileNSettings from "./pages/modals/ProfileNSettings";
+import UserInfo from "./pages/modals/ProfileNSettings";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <AntDesign name="home" size={size} color={color} />
-            ),
-            // headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="Video"
-          component={Video}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <AntDesign name="videocamera" size={size} color={color} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Defined Sentences"
-          component={DefinedSentences}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="co-present" size={size} color={color} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-      <Toast forwardRef={(ref) => Toast.setRef(ref)} />
-    </NavigationContainer>
+    <LogicContext>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <AntDesign name="home" size={size} color={color} />
+              ),
+              // headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Video"
+            component={Video}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <AntDesign name="videocamera" size={size} color={color} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Defined Sentences"
+            component={DefinedSentences}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <MaterialIcons name="co-present" size={size} color={color} />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+        <Toast forwardRef={(ref) => Toast.setRef(ref)} />
+        {/* <ProfileNSettings /> */}
+        <UserInfo />
+      </NavigationContainer>
+    </LogicContext>
   );
 }
 
