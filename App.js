@@ -25,7 +25,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <AntDesign name="home" size={size} color={color} />
               ),
-              // headerShown: false,
+              headerShown: false, //Fix navigation for sign in and sign up compon
             }}
           />
           <Tab.Screen

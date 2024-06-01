@@ -82,6 +82,7 @@ const Profile = () => {
             console.log(true);
           } else {
             console.log(false);
+            //Add toast and more conditions should be checked
           }
         }}
         style={styles.saveChangesButton}
