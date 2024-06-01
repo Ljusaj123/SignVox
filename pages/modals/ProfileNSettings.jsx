@@ -25,6 +25,8 @@ const UserInfo = () => {
   const { profileNSettingsDisplay, setProfileNSettingsDisplay } =
     useContext(LogicCntx);
   const [showProfile, setShowProfile] = useState(true);
+
+  /////////////////////////////////////////
   return profileNSettingsDisplay ? (
     <>
       <View style={styles.background}>
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    height: 500,
+    height: 520,
     backgroundColor: "#fff",
     borderRadius: 20,
     padding: 25,
