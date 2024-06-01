@@ -9,8 +9,8 @@ import { MaterialIcons } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LogicContext from "./contexes/LogicContext";
+import UserInfo from "./pages/modals/UserInfo";
 import ProfileNSettings from "./pages/modals/ProfileNSettings";
-import UserInfo from "./pages/modals/ProfileNSettings";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -48,7 +48,7 @@ export default function App() {
           />
         </Tab.Navigator>
         <Toast forwardRef={(ref) => Toast.setRef(ref)} />
-        {/* <ProfileNSettings /> */}
+        <ProfileNSettings />
         <UserInfo />
       </NavigationContainer>
     </LogicContext>

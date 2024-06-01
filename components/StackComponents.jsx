@@ -23,7 +23,8 @@ const RecentCallProfile = ({ text, image }) => {
 const FriendsProfile = ({ image, name, date }) => {
   //Chnage variable names I have zero imagination for naming them
 
-  const { setUserInfoDisplay } = useContext(LogicCntx);
+  const { setUserInfoDisplay, setProfileNSettingsDisplay } =
+    useContext(LogicCntx);
   return (
     <View style={styles.friendsContainer}>
       <Image
@@ -40,7 +41,9 @@ const FriendsProfile = ({ image, name, date }) => {
       </View>
 
       <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>
-        <Feather name="video" size={26} color={purpleExtra} />
+        <Pressable onPress={() => setProfileNSettingsDisplay(true)}>
+          <Feather name="video" size={26} color={purpleExtra} />
+        </Pressable>
         <Pressable onPress={() => setUserInfoDisplay(true)}>
           <Feather name="info" size={26} color={purpleExtra} />
         </Pressable>

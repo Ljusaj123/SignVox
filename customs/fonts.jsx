@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { black } from "./colors";
 
 const HeaderFont = ({ children, style }) => {
   // To merge styles just do this {children, style} and inside the Text component just change [(insert your styles)), style]
@@ -26,7 +27,7 @@ const HeaderMedium = ({ children, style }) => {
         {
           fontSize: 25,
           fontWeight: "600",
-          color: "#000",
+          color: black,
         },
         style,
       ]}

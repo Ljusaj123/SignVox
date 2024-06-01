@@ -12,6 +12,7 @@ import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../../contexes/LogicContext";
 import { black, purple, purpleExtra } from "../../customs/colors";
 
+//Custom modal
 const ProfileNSettings = ({ name }) => {
   const { userInfoDisplay, setUserInfoDisplay } = useContext(LogicCntx);
   return userInfoDisplay ? (
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    aspectRatio: 4 / 3,
+    aspectRatio: 4 / 3, //change this to fixed if this doesn't work well on all mobile devices
     backgroundColor: "#fff",
     borderRadius: 20,
     paddingHorizontal: 25,
