@@ -25,8 +25,11 @@ import {
 } from "../customs/colors";
 import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
 import { LogicCntx } from "../contexes/LogicContext";
+import { useColorScheme } from "react-native";
 
 const Home = () => {
+  let theme = useColorScheme();
+  console.log(theme);
   const [text, onChangeText] = useState("");
   const { setProfileNSettingsDisplay } = useContext(LogicCntx);
   return (
@@ -133,6 +136,6 @@ const styles = StyleSheet.create({
   friendsContainer: {
     gap: 15,
 
-    height: 405, //please fix this if you know how to make container to expand himself fully, but to not overflow navbar because, all users cannot be scrolled through
+    height: 400, //please fix this if you know how to make container to expand himself fully, but to not overflow navbar because, all users cannot be scrolled through
   },
 });

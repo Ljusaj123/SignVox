@@ -10,7 +10,7 @@ const HeaderFont = ({ children, style }) => {
         {
           fontSize: 30,
           fontWeight: "bold",
-          color: "#000",
+          color: black,
           textDecorationLine: "underline",
         },
         style,
@@ -38,7 +38,9 @@ const HeaderMedium = ({ children, style }) => {
 };
 const MediumFont = ({ children, style }) => {
   return (
-    <Text style={[{ fontSize: 20, fontWeight: "500" }, style]}>{children}</Text>
+    <Text style={[{ fontSize: 20, fontWeight: "500", color: black }, style]}>
+      {children}
+    </Text>
   );
 };
 
