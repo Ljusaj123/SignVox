@@ -16,7 +16,7 @@ export default function Video() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#c9cfe0",
+    backgroundColor: "#fff",
     paddingHorizontal: 20,
   },
 });
