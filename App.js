@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, Button, Image, Text } from "react-native";
+import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
 import { Home, Video, DefinedSentences } from "./pages";
 import { NavigationContainer } from "@react-navigation/native";
@@ -7,11 +7,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
-import { SafeAreaView } from "react-native-safe-area-context";
 import LogicContext from "./contexes/LogicContext";
 import UserInfo from "./pages/modals/UserInfo";
 import ProfileNSettings from "./pages/modals/ProfileNSettings";
-
+import Header from "./components/Header";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -36,7 +35,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <AntDesign name="videocamera" size={size} color={color} />
               ),
-              headerShown: false,
+              header: () => <Header />,
             }}
           />
           <Tab.Screen
@@ -46,6 +45,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <MaterialIcons name="co-present" size={size} color={color} />
               ),
+              header: () => <Header />,
             }}
           />
         </Tab.Navigator>

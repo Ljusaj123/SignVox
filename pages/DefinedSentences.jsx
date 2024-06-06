@@ -6,8 +6,9 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  Image,
+  Pressable,
   Modal,
-  Button,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Wordcard from "../components/Wordcard";
@@ -154,9 +155,9 @@ export default function DefinedSentences() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#CCD5F9",
-    paddingHorizontal: 20,
-    paddingVertical: StatusBar.currentHeight,
+    padding: 20,
+    backgroundColor: "#fff",
+    gap: 15,
   },
   sectionText: {
     fontSize: 20,

@@ -2,7 +2,7 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import { useEffect, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Header from "../components/Header";
+
 import { purpleExtra, white } from "../customs/colors";
 import { Feather } from "@expo/vector-icons";
 import { HeaderMedium, MediumFont } from "../customs/fonts";
@@ -57,8 +57,6 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
-
       <View style={styles.videoContainer}>
         <CameraView facing={facing} style={styles.camera}>
           <TouchableOpacity

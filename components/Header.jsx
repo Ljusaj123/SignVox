@@ -1,10 +1,7 @@
-import { StyleSheet, View, Image, Pressable } from "react-native";
-import { LogicCntx } from "../contexes/LogicContext";
-import React, { useContext } from "react";
+import React from "react";
+import { View, Image, Pressable, StyleSheet } from "react-native";
 
-const Header = () => {
-  const { setProfileNSettingsDisplay } = useContext(LogicCntx);
-
+function Header() {
   return (
     <View style={styles.header}>
       <Image
@@ -25,12 +22,15 @@ const Header = () => {
       </Pressable>
     </View>
   );
-};
+}
 
 export default Header;
 
 const styles = StyleSheet.create({
   header: {
+    padding: 20,
+    paddingBottom: 0,
+    backgroundColor: "#fff",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
