@@ -11,6 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import LogicContext from "./contexes/LogicContext";
 import UserInfo from "./pages/modals/UserInfo";
 import ProfileNSettings from "./pages/modals/ProfileNSettings";
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <AntDesign name="videocamera" size={size} color={color} />
               ),
+              headerShown: false,
             }}
           />
           <Tab.Screen
@@ -50,6 +52,7 @@ export default function App() {
         <Toast forwardRef={(ref) => Toast.setRef(ref)} />
         <ProfileNSettings />
         <UserInfo />
+        {/* because of navbar I moved this to global, but in future move to Home component */}
       </NavigationContainer>
     </LogicContext>
   );

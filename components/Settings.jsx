@@ -13,40 +13,40 @@ const Settings = () => {
   ///////////////
   return (
     <View style={styles.container}>
-      <Pressable onPress={darkThemeFunc}>
-        <View style={styles.optionContainer}>
-          <HeaderMedium style={{ fontWeight: 500, fontSize: 22 }}>
-            Dark mode
-          </HeaderMedium>
-          <SwitchToggle
-            switchOn={darkTheme}
-            circleColorOff={white}
-            circleColorOn={white}
-            backgroundColorOn={purpleExtra}
-            backgroundColorOff={purple}
-            style={styles.toggleSwitchStyle}
-            containerStyle={styles.sliderStyle}
-            circleStyle={styles.circleStyle}
-          />
-        </View>
-      </Pressable>
-      <Pressable onPress={accountPrivateFunc}>
-        <View style={styles.optionContainer}>
-          <HeaderMedium style={{ fontWeight: 500, fontSize: 22 }}>
-            Private account
-          </HeaderMedium>
-          <SwitchToggle
-            switchOn={accountPrivate}
-            circleColorOff={white}
-            circleColorOn={white}
-            backgroundColorOn={purpleExtra}
-            backgroundColorOff={purple}
-            style={styles.toggleSwitchStyle}
-            containerStyle={styles.sliderStyle}
-            circleStyle={styles.circleStyle}
-          />
-        </View>
-      </Pressable>
+      <View style={styles.optionContainer}>
+        <HeaderMedium style={{ fontWeight: 500, fontSize: 22 }}>
+          Dark mode
+        </HeaderMedium>
+        <SwitchToggle
+          onPress={darkThemeFunc}
+          switchOn={darkTheme}
+          circleColorOff={white}
+          circleColorOn={white}
+          backgroundColorOn={purpleExtra}
+          backgroundColorOff={purple}
+          style={styles.toggleSwitchStyle}
+          containerStyle={styles.sliderStyle}
+          circleStyle={styles.circleStyle}
+        />
+      </View>
+
+      <View style={styles.optionContainer}>
+        <HeaderMedium style={{ fontWeight: 500, fontSize: 22 }}>
+          Private account
+        </HeaderMedium>
+        <SwitchToggle
+          onPress={accountPrivateFunc}
+          switchOn={accountPrivate}
+          circleColorOff={white}
+          circleColorOn={white}
+          backgroundColorOn={purpleExtra}
+          backgroundColorOff={purple}
+          style={styles.toggleSwitchStyle}
+          containerStyle={styles.sliderStyle}
+          circleStyle={styles.circleStyle}
+        />
+      </View>
+
       <Pressable onPress={() => console.log("Works")}>
         <View style={styles.optionContainer}>
           <HeaderMedium style={{ fontWeight: 500, fontSize: 22 }}>
