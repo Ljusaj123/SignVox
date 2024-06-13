@@ -84,6 +84,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: white,
     padding: 20,
     paddingBottom: 0,
@@ -110,8 +111,7 @@ const styles = StyleSheet.create({
   },
 
   friendsContainer: {
+    flex: 1,
     gap: 15,
-
-    height: 400, //please fix this if you know how to make container to expand himself fully, but to not overflow navbar because, all users cannot be scrolled through
   },
 });

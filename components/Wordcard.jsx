@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native";
 export default function Wordcard({ sentence, onDelete }) {
   const handleCardPress = () => {
     Speech.speak(sentence, {
-      language: "hr",
+      language: "en",
     });
   };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
-import { Home, Video, DefinedSentences } from "./pages";
+import { Home, Camera, DefinedSentences } from "./pages";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
@@ -29,8 +29,8 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="Video"
-            component={Video}
+            name="Camera"
+            component={Camera}
             options={{
               tabBarIcon: ({ color, size }) => (
                 <AntDesign name="videocamera" size={size} color={color} />
@@ -39,7 +39,7 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="Defined Sentences"
+            name="Sentences"
             component={DefinedSentences}
             options={{
               tabBarIcon: ({ color, size }) => (
