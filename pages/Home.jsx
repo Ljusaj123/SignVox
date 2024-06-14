@@ -25,8 +25,6 @@ import {
   black,
 } from "../customs/colors";
 import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
-import { LogicCntx } from "../contexes/LogicContext";
-import Header from "../components/Header";
 
 const Home = () => {
   const [search, onChangeSearch] = useState("");
@@ -35,12 +33,12 @@ const Home = () => {
   const filteredSearch = friends.filter(
     (itm) => itm.name.includes(search) || itm.lastTimeCalled.includes(search)
   );
-  const displayInput = search.length > 0;
-  console.log(filteredSearch);
+  const [displayInput, setDisplayInput] = useState(false);
+
   // const { setProfileNSettingsDisplay } = useContext(LogicCntx);
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <View style={styles.searchContainer}>
         <AntDesign
           name="search1"
@@ -51,6 +49,8 @@ const Home = () => {
         <TextInput
           style={styles.search}
           onChangeText={onChangeSearch}
+          onFocus={() => setDisplayInput(true)}
+          onBlur={() => setDisplayInput(false)}
           value={search}
           placeholder="Search for your friends..."
         />

@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";
@@ -25,9 +26,9 @@ const ProfileNSettings = ({ name }) => {
         <View style={styles.container}>
           <View style={styles.header}>
             <HeaderMedium>Ivan Horvat</HeaderMedium>
-            <Pressable onPress={() => console.log("Video")}>
+            <TouchableOpacity onPress={() => console.log("Video")}>
               <Feather name="video" size={26} color={purpleExtra} />
-            </Pressable>
+            </TouchableOpacity>
           </View>
           <View style={styles.mainContainer}>
             <View style={styles.pfpContainer}>

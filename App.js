@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
 import { Home, Camera, DefinedSentences } from "./pages";
@@ -11,29 +11,52 @@ import LogicContext from "./contexes/LogicContext";
 import UserInfo from "./pages/modals/UserInfo";
 import ProfileNSettings from "./pages/modals/ProfileNSettings";
 import Header from "./components/Header";
+import {
+  black,
+  purple,
+  purpleExtra,
+  smokewhite,
+  smokewhiteExtra,
+} from "./customs/colors";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <LogicContext>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator
+          screenOptions={() => ({
+            tabBarActiveTintColor: smokewhiteExtra,
+            tabBarStyle: {
+              height: 60,
+              fontSize: 5,
+              backgroundColor: smokewhite,
+              borderTopColor: smokewhiteExtra,
+              borderTopWidth: 1,
+            },
+            tabBarLabelStyle: {
+              fontSize: 14,
+              marginBottom: 4, //I think this looks better and the easiest way of not modifing the whole navbar
+              fontWeight: 600,
+            },
+          })}
+        >
           <Tab.Screen
             name="Home"
             component={Home}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <AntDesign name="home" size={size} color={color} />
+              tabBarIcon: ({ color }) => (
+                <AntDesign name="home" size={26} color={color} />
               ),
-              headerShown: false, //Fix navigation for sign in and sign up compon
+              header: () => <Header />,
             }}
           />
           <Tab.Screen
             name="Camera"
             component={Camera}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <AntDesign name="videocamera" size={size} color={color} />
+              tabBarIcon: ({ color }) => (
+                <AntDesign name="videocamera" size={26} color={color} />
               ),
               header: () => <Header />,
             }}
@@ -42,8 +65,8 @@ export default function App() {
             name="Sentences"
             component={DefinedSentences}
             options={{
-              tabBarIcon: ({ color, size }) => (
-                <MaterialIcons name="co-present" size={size} color={color} />
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="co-present" size={26} color={color} />
               ),
               header: () => <Header />,
             }}
