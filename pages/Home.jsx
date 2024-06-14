@@ -6,6 +6,7 @@ import {
   FlatList,
   Image,
   Pressable,
+  KeyboardAvoidingView,
 } from "react-native";
 import { HeaderFont } from "../customs/fonts";
 import { friends, recentCalls } from "../utils/homePageUtils";
@@ -26,9 +27,17 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
 import { LogicCntx } from "../contexes/LogicContext";
 import Header from "../components/Header";
+
 const Home = () => {
-  const [text, onChangeText] = useState("");
-  const { setProfileNSettingsDisplay } = useContext(LogicCntx);
+  const [search, onChangeSearch] = useState("");
+
+  // You can remove this for last time, also if you want to remove case sensitivity itm.toLowerCase.name.includes(search)
+  const filteredSearch = friends.filter(
+    (itm) => itm.name.includes(search) || itm.lastTimeCalled.includes(search)
+  );
+  const displayInput = search.length > 0;
+  console.log(filteredSearch);
+  // const { setProfileNSettingsDisplay } = useContext(LogicCntx);
   return (
     <SafeAreaView style={styles.container}>
       <Header />
@@ -41,31 +50,33 @@ const Home = () => {
         />
         <TextInput
           style={styles.search}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeSearch}
+          value={search}
           placeholder="Search for your friends..."
         />
         <Feather name="more-horizontal" size={24} color={purpleExtra} />
       </View>
-      <View style={{ gap: 10 }}>
-        <HeaderFont>Recent calls</HeaderFont>
-        <FlatList
-          contentContainerStyle={styles.rCContainerItemStyle}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={recentCalls}
-          renderItem={({ item }) => (
-            <RecentCallProfile text={item.name} image={item.img} />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
+      {!displayInput ? (
+        <View style={{ gap: 10 }}>
+          <HeaderFont>Recent calls</HeaderFont>
+          <FlatList
+            contentContainerStyle={styles.rCContainerItemStyle}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={recentCalls}
+            renderItem={({ item }) => (
+              <RecentCallProfile text={item.name} image={item.img} />
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      ) : null}
       <View style={styles.friendsContainer}>
         <HeaderFont style={{ marginBottom: -10 }}>Friends</HeaderFont>
 
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={friends}
+          data={filteredSearch}
           renderItem={({ item }) => (
             <FriendsProfile
               name={item.name}

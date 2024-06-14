@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Image, Pressable, StyleSheet } from "react-native";
+import { LogicCntx } from "../contexes/LogicContext";
 
 function Header() {
+  const { setProfileNSettingsDisplay } = useContext(LogicCntx);
+
   return (
     <View style={styles.header}>
       <Image
