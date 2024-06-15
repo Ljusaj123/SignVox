@@ -7,10 +7,10 @@ import {
   MediumFont,
 } from "../customs/fonts";
 import {
-  purpleExtra,
   smokewhiteExtra,
   smokewhite,
   white,
+  blueExtra,
 } from "../customs/colors";
 import React from "react";
 import { Link } from "@react-navigation/native";
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     height: 60,
     lineHeight: 60, // make this better if I have
     textAlign: "center",
-    backgroundColor: purpleExtra,
+    backgroundColor: blueExtra,
     color: white,
     borderRadius: 8,
   },

@@ -11,7 +11,12 @@ import LogicContext from "./contexes/LogicContext";
 import UserInfo from "./pages/modals/UserInfo";
 import ProfileNSettings from "./pages/modals/ProfileNSettings";
 import Header from "./components/Header";
-import { purpleExtra, smokewhite, smokewhiteExtra } from "./customs/colors";
+import {
+  blueExtra,
+  purpleExtra,
+  smokewhite,
+  smokewhiteExtra,
+} from "./customs/colors";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -20,7 +25,7 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={() => ({
-            tabBarActiveTintColor: purpleExtra,
+            tabBarActiveTintColor: blueExtra,
             tabBarStyle: {
               height: 60,
               fontSize: 5,

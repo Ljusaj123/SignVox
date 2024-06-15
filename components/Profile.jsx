@@ -10,8 +10,8 @@ import {
 import { HeaderMedium, MediumFont, NormalFont } from "../customs/fonts";
 import React, { useState } from "react";
 import {
-  purple,
-  purpleExtra,
+  blue,
+  blueExtra,
   smokewhite,
   smokewhiteExtra,
   white,
@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: "35%",
     borderBottomWidth: 2,
-    borderBottomColor: purple,
+    borderBottomColor: blue,
   },
   profileBasicInfo: {
     alignItems: "center",
-    borderRightColor: purple,
+    borderRightColor: blue,
     borderRightWidth: 2,
     paddingRight: 15,
   },
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     color: smokewhiteExtra,
   },
   saveChangesButton: {
-    backgroundColor: purpleExtra,
+    backgroundColor: blueExtra,
     alignItems: "center",
     justifyContent: "center",
     height: 55,

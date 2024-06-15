@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toast from "react-native-toast-message";
-import { purpleExtra, white } from "../customs/colors";
+import { blueExtra, white } from "../customs/colors";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   videoContainer: {
     borderWidth: 2,
-    borderColor: purpleExtra,
+    borderColor: blueExtra,
     flex: 1,
     borderRadius: 20,
     alignItems: "center",
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 10,
     bottom: 10,
-    backgroundColor: purpleExtra,
+    backgroundColor: blueExtra,
     width: 60,
     height: 60,
     justifyContent: "center",
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     bottom: 10,
-    backgroundColor: purpleExtra,
+    backgroundColor: blueExtra,
     width: 60,
     height: 60,
     justifyContent: "center",

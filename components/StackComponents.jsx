@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { StyleSheet, View, Image, Pressable } from "react-native";
-import { purple, smokewhiteExtra } from "../customs/colors";
+import { blue, smokewhiteExtra } from "../customs/colors";
 import { MediumFont, HeaderMedium, NormalFont } from "../customs/fonts";
 /////////
 import { LogicCntx } from "../contexes/LogicContext";
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    borderColor: purple,
+    borderColor: blue,
     borderRadius: 10,
     height: 80,
     borderWidth: 1,

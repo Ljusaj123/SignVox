@@ -16,9 +16,9 @@ import Toast from "react-native-toast-message";
 import {
   smokewhite,
   smokewhiteExtra,
-  purpleExtra,
-  purple,
   white,
+  blue,
+  blueExtra,
 } from "../customs/colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { HeaderMedium, Title } from "../customs/fonts";
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: purpleExtra,
+    backgroundColor: blueExtra,
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderRadius: 10,
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     gap: 5,
     borderBottomWidth: 1,
-    borderBottomColor: "#8197B7",
+    borderBottomColor: blue,
   },
 
   listContainer: {
@@ -260,7 +260,6 @@ const styles = StyleSheet.create({
     backgroundColor: smokewhite,
     flex: 1,
     borderRadius: 20,
-    borderWidth: 1,
     maxHeight: 50,
   },
 
@@ -270,7 +269,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    borderBottomColor: purple,
+    borderBottomColor: blue,
     borderBottomWidth: 2,
     paddingBottom: 5,
   },

@@ -2,7 +2,7 @@ import { StyleSheet, View, Pressable } from "react-native";
 import SwitchToggle from "react-native-switch-toggle";
 import React, { useState } from "react";
 import { HeaderMedium } from "../customs/fonts";
-import { purple, purpleExtra, white } from "../customs/colors";
+import { blue, blueExtra, white } from "../customs/colors";
 import { AntDesign } from "@expo/vector-icons";
 
 const Settings = () => {
@@ -23,8 +23,8 @@ const Settings = () => {
           switchOn={darkTheme}
           circleColorOff={white}
           circleColorOn={white}
-          backgroundColorOn={purpleExtra}
-          backgroundColorOff={purple}
+          backgroundColorOn={blueExtra}
+          backgroundColorOff={blue}
           style={styles.toggleSwitchStyle}
           containerStyle={styles.sliderStyle}
           circleStyle={styles.circleStyle}
@@ -40,8 +40,8 @@ const Settings = () => {
           switchOn={accountPrivate}
           circleColorOff={white}
           circleColorOn={white}
-          backgroundColorOn={purpleExtra}
-          backgroundColorOff={purple}
+          backgroundColorOn={blueExtra}
+          backgroundColorOff={blue}
           style={styles.toggleSwitchStyle}
           containerStyle={styles.sliderStyle}
           circleStyle={styles.circleStyle}
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingBottom: 5,
-    borderBottomColor: purple,
+    borderBottomColor: blue,
     borderBottomWidth: 2,
   },
   sliderStyle: {

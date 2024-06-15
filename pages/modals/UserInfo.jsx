@@ -4,7 +4,7 @@ import Toast from "react-native-toast-message";
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../../contexes/LogicContext";
-import { purple, purpleExtra, white } from "../../customs/colors";
+import { blue, blueExtra, white } from "../../customs/colors";
 
 //Custom modal
 const ProfileNSettings = ({ name }) => {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    borderBottomColor: purple, // purple color
+    borderBottomColor: blue,
     borderBottomWidth: 2,
     paddingBottom: 5,
     alignItems: "center",
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   pfpContainer: {
-    borderRightColor: purple,
+    borderRightColor: blue,
     borderRightWidth: 2,
     alignItems: "center",
     justifyContent: "center",
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
   },
 
   videoButton: {
-    borderRadius: 50,
-    backgroundColor: purpleExtra,
-    padding: 7,
+    borderRadius: 10,
+    backgroundColor: blueExtra,
+    padding: 8,
   },
 });

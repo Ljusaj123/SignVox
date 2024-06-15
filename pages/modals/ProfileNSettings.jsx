@@ -3,11 +3,11 @@ import { StyleSheet, View, Pressable } from "react-native";
 import { LogicCntx } from "../../contexes/LogicContext";
 import { HeaderMedium } from "../../customs/fonts";
 import {
-  purpleExtra,
-  purple,
   white,
   smokewhite,
   black,
+  blueExtra,
+  blue,
 } from "../../customs/colors";
 import Profile from "../../components/Profile";
 import Settings from "../../components/Settings";
@@ -32,7 +32,7 @@ const UserInfo = () => {
               style={[
                 styles.profileHeading,
                 {
-                  backgroundColor: showProfile ? purpleExtra : smokewhite,
+                  backgroundColor: showProfile ? blueExtra : smokewhite,
                 },
               ]}
               onPress={() => setShowProfile(true)}
@@ -48,7 +48,7 @@ const UserInfo = () => {
               style={[
                 styles.settingsHeading,
                 {
-                  backgroundColor: showProfile ? smokewhite : purpleExtra,
+                  backgroundColor: showProfile ? smokewhite : blueExtra,
                   color: white,
                 },
               ]}
@@ -122,6 +122,6 @@ const styles = StyleSheet.create({
   divider: {
     height: 2,
     width: "100%",
-    backgroundColor: purple,
+    backgroundColor: blue,
   },
 });

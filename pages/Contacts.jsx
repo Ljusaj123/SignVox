@@ -9,7 +9,7 @@ import {
   RecentCallProfile,
 } from "../components/StackComponents";
 import {
-  purpleExtra,
+  blueExtra,
   smokewhite,
   smokewhiteExtra,
   white,
@@ -56,7 +56,7 @@ const Contacts = () => {
           onChangeText={handleSearch}
           value={searchQuery}
         />
-        <Feather name="more-horizontal" size={24} color={purpleExtra} />
+        <Feather name="more-horizontal" size={24} color={blueExtra} />
       </View>
       <View style={{ gap: 10 }}>
         <HeaderFont>Recent calls</HeaderFont>

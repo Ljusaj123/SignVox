@@ -9,7 +9,7 @@ function Header() {
     <View style={styles.header}>
       <Image
         source={require("../assets/SignVoxLogoImg.png")}
-        style={{ height: 50, width: 140, objectFit: "contain" }}
+        style={{ height: 85, width: 170, objectFit: "contain" }}
       />
       <Pressable onPress={() => setProfileNSettingsDisplay(true)}>
         <Image
@@ -17,8 +17,8 @@ function Header() {
             uri: "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/man-user-circle-icon.png",
           }}
           style={{
-            width: 50,
-            height: 50,
+            width: 60,
+            height: 60,
             borderRadius: 50,
           }}
         />
