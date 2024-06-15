@@ -59,7 +59,7 @@ export default function Camera() {
   function handleRecord() {
     Toast.show({
       type: "success",
-      text1: "Start signing",
+      text1: "Start recording",
       text2: "Feature will be implemented soon...",
     });
   }
