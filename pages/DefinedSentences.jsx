@@ -228,8 +228,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 20,
     gap: 5,
-    borderBottomWidth: 1,
-    borderBottomColor: blue,
   },
 
   listContainer: {
