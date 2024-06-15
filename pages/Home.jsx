@@ -10,7 +10,7 @@ import { white } from "../customs/colors";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Title } from "../customs/fonts";
 
-export default function Home({ navigation }) {
+export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>

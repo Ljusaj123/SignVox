@@ -1,15 +1,7 @@
 import React, { useContext, useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Pressable,
-  Image,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, View, Pressable } from "react-native";
 import { LogicCntx } from "../../contexes/LogicContext";
-import { Feather } from "@expo/vector-icons";
-import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
+import { HeaderMedium } from "../../customs/fonts";
 import {
   purpleExtra,
   purple,

@@ -1,9 +1,10 @@
-import { ScrollView, StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, View, Pressable } from "react-native";
 import SwitchToggle from "react-native-switch-toggle";
 import React, { useState } from "react";
-import { HeaderMedium, MediumFont } from "../customs/fonts";
+import { HeaderMedium } from "../customs/fonts";
 import { purple, purpleExtra, white } from "../customs/colors";
 import { AntDesign } from "@expo/vector-icons";
+
 const Settings = () => {
   const [darkTheme, setDarkTheme] = useState(false);
   const darkThemeFunc = () => setDarkTheme((prev) => !prev);

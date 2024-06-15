@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import { purple, purpleExtra, smokewhiteExtra } from "../customs/colors";
+import { StyleSheet, View, Image, Pressable } from "react-native";
+import { purple, smokewhiteExtra } from "../customs/colors";
 import { MediumFont, HeaderMedium, NormalFont } from "../customs/fonts";
 /////////
-import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../contexes/LogicContext";
 
 const RecentCallProfile = ({ text, image }) => {
@@ -42,13 +41,6 @@ const FriendsProfile = ({ image, name, date }) => {
             Last time called: {date}
           </NormalFont>
         </View>
-
-        {/* <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>
-        <Feather name="video" size={26} color={purpleExtra} />
-        <Pressable onPress={() => setUserInfoDisplay(true)}>
-          <Feather name="info" size={26} color={purpleExtra} />
-        </Pressable>
-      </View> */}
       </Pressable>
     </View>
   );

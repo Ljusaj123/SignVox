@@ -1,11 +1,4 @@
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, TextInput, View } from "react-native";
 import { HeaderMedium, MediumFont, NormalFont } from "../customs/fonts";
 import React, { useState } from "react";
 import {

@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { purpleExtra, white } from "../customs/colors";
 import { Feather } from "@expo/vector-icons";
-import { HeaderMedium, MediumFont } from "../customs/fonts";
+
 export default function Camera() {
   const [facing, setFacing] = useState("front");
   const [permission, requestPermission] = useCameraPermissions();

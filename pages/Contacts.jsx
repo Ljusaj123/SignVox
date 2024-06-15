@@ -18,7 +18,6 @@ import { SafeAreaView } from "react-native-safe-area-context"; //this works accr
 import { LogicCntx } from "../contexes/LogicContext";
 
 const Contacts = () => {
-  const [text, onChangeText] = useState("");
   const { setProfileNSettingsDisplay } = useContext(LogicCntx);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(friends);

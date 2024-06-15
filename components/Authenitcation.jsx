@@ -1,12 +1,4 @@
-import {
-  Image,
-  StyleSheet,
-  TextInput,
-  View,
-  SafeAreaView,
-  Pressable,
-  Button,
-} from "react-native";
+import { Image, StyleSheet, TextInput, View, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   HeaderFont,
@@ -16,7 +8,6 @@ import {
 } from "../customs/fonts";
 import {
   purpleExtra,
-  linearGradientWhite,
   smokewhiteExtra,
   smokewhite,
   white,

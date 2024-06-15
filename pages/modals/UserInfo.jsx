@@ -1,16 +1,9 @@
 import React, { useContext } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, Image, ScrollView, Pressable } from "react-native";
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../../contexes/LogicContext";
-import { black, purple, purpleExtra, white } from "../../customs/colors";
+import { purple, purpleExtra, white } from "../../customs/colors";
 
 //Custom modal
 const ProfileNSettings = ({ name }) => {
