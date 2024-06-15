@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { StyleSheet, View, Image, ScrollView, Pressable } from "react-native";
-
 import Toast from "react-native-toast-message";
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";

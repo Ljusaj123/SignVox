@@ -17,10 +17,11 @@ import {
   smokewhite,
   smokewhiteExtra,
   purpleExtra,
+  purple,
   white,
 } from "../customs/colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { Title } from "../customs/fonts";
+import { HeaderMedium, Title } from "../customs/fonts";
 
 export default function DefinedSentences() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -80,7 +81,7 @@ export default function DefinedSentences() {
     const newSentences = filteredData.filter((item) => item.id !== id);
     setFilteredData(newSentences);
     Toast.show({
-      type: "error",
+      type: "success",
       text1: "Sentence Deleted",
       text2: "The sentence has been deleted successfully.",
     });
@@ -101,14 +102,17 @@ export default function DefinedSentences() {
         <Modal
           transparent={true}
           visible={isModalVisible}
-          animationType="slide"
+          animationType="none"
           onRequestClose={() => {
             toggleModal();
           }}
         >
           <View style={styles.modalOverlay}>
             <View style={styles.modalContainer}>
-              <Text style={styles.modalTitle}>New Sentence</Text>
+              <View style={styles.header}>
+                <HeaderMedium>New Sentence</HeaderMedium>
+              </View>
+
               <TextInput
                 style={styles.textInput}
                 placeholder="Enter sentence..."
@@ -169,7 +173,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     paddingBottom: 0,
-    backgroundColor: "#fff",
+    backgroundColor: white,
     gap: 15,
   },
 
@@ -180,7 +184,6 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     height: 50,
     minWidth: 250,
-    borderWidth: 1,
   },
 
   searchContainer: {
@@ -201,22 +204,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
   },
+
   button: {
     backgroundColor: purpleExtra,
     paddingHorizontal: 20,
     paddingVertical: 15,
-    borderRadius: 15,
+    borderRadius: 10,
   },
 
   cancelButton: {
-    backgroundColor: "#777",
+    backgroundColor: "#666",
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderRadius: 15,
   },
 
   buttonText: {
-    color: "#fff",
+    color: white,
   },
 
   formContainer: {
@@ -237,23 +241,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(69, 71, 75, 0.6)",
   },
 
   modalContainer: {
     width: 300,
-    height: 200,
+    height: 230,
     padding: 20,
     backgroundColor: white,
-    borderRadius: 10,
-    gap: 15,
-  },
-
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "center",
+    borderRadius: 20,
+    gap: 20,
+    justifyContent: "space-between",
   },
 
   textInput: {
@@ -263,10 +261,17 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 20,
     borderWidth: 1,
+    maxHeight: 50,
   },
 
   noDataText: {
     textAlign: "center",
     fontSize: 20,
+  },
+
+  header: {
+    borderBottomColor: purple,
+    borderBottomWidth: 2,
+    paddingBottom: 5,
   },
 });

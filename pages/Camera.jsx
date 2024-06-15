@@ -2,9 +2,10 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import { useEffect, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import Toast from "react-native-toast-message";
 import { purpleExtra, white } from "../customs/colors";
 import { Feather } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function Camera() {
   const [facing, setFacing] = useState("front");
@@ -55,6 +56,14 @@ export default function Camera() {
     setFacing((current) => (current === "back" ? "front" : "back"));
   }
 
+  function handleRecord() {
+    Toast.show({
+      type: "success",
+      text1: "Start signing",
+      text2: "Feature will be implemented soon...",
+    });
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.videoContainer}>
@@ -63,7 +72,10 @@ export default function Camera() {
             onPress={toggleCameraFacing}
             style={styles.changePosition}
           >
-            <Feather name="rotate-ccw" size={30} color={white} />
+            <Feather name="rotate-cw" size={20} color={white} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.recordButton} onPress={handleRecord}>
+            <FontAwesome name="microphone" size={20} color={white} />
           </TouchableOpacity>
         </CameraView>
       </View>
@@ -109,6 +121,18 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     position: "relative",
+  },
+
+  recordButton: {
+    position: "absolute",
+    left: 10,
+    bottom: 10,
+    backgroundColor: purpleExtra,
+    width: 60,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
   },
   changePosition: {
     position: "absolute",
