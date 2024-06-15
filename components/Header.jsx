@@ -8,7 +8,7 @@ function Header() {
   return (
     <View style={styles.header}>
       <Image
-        source={require("../assets/SignVoxLogoSmall.png")}
+        source={require("../assets/SignVoxLogoImg.png")}
         style={{ height: 50, width: 140, objectFit: "contain" }}
       />
       <Pressable onPress={() => setProfileNSettingsDisplay(true)}>

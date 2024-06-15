@@ -30,7 +30,7 @@ const Authenitcation = ({ isSignUp }) => {
         style={[styles.contentContainer, isSignUp ? null : { height: 520 }]}
       >
         <Image
-          source={require("../assets/SignVoxLogoSmall.png")}
+          source={require("../assets/SignVoxLogoImg.png")}
           style={styles.logo}
         />
         <HeaderFont style={{ textDecorationLine: "none" }}>
