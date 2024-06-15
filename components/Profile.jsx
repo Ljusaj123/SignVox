@@ -1,4 +1,12 @@
-import { Image, Pressable, StyleSheet, TextInput, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { HeaderMedium, MediumFont, NormalFont } from "../customs/fonts";
 import React, { useState } from "react";
 import {
@@ -8,7 +16,6 @@ import {
   smokewhiteExtra,
   white,
 } from "../customs/colors";
-
 const Profile = () => {
   const [textCount, setTextCount] = useState("");
   const textCountCounter = textCount.split("").length; // expert in naming variables :))
@@ -69,9 +76,9 @@ const Profile = () => {
           </NormalFont>
         </View>
       </View>
-      <Pressable
+      <TouchableOpacity
         onPress={() => {
-          if (textCountCounter <= 100) {
+          if (textCountCounter <= 100 && textCountCounter !== 0) {
             console.log(true);
           } else {
             console.log(false);
@@ -81,7 +88,7 @@ const Profile = () => {
         style={styles.saveChangesButton}
       >
         <HeaderMedium style={{ color: white }}>Save changes</HeaderMedium>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -107,7 +114,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
   },
   profileCredentials: {
-    paddingLeft: 15,
+    paddingHorizontal: 15,
     gap: 10,
   },
   inputField: {
@@ -116,7 +123,7 @@ const styles = StyleSheet.create({
     width: 150,
     fontSize: 10,
     borderRadius: 8,
-    paddingLeft: 8,
+    paddingHorizontal: 8,
   },
   bioSection: {
     gap: 10,
@@ -127,7 +134,7 @@ const styles = StyleSheet.create({
     backgroundColor: smokewhite,
     borderRadius: 8,
     paddingTop: 5,
-    paddingLeft: 10,
+    paddingHorizontal: 10,
   },
   countText: {
     position: "absolute",

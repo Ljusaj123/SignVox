@@ -6,11 +6,12 @@ import {
   ScrollView,
   ImageBackground,
 } from "react-native";
+
 import { white } from "../customs/colors";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
 import { Title } from "../customs/fonts";
 
-export default function Home() {
+export const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -41,7 +42,7 @@ export default function Home() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

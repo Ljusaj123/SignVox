@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { StyleSheet, View, Image, ScrollView, Pressable } from "react-native";
+
+import Toast from "react-native-toast-message";
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../../contexes/LogicContext";
@@ -8,6 +10,14 @@ import { purple, purpleExtra, white } from "../../customs/colors";
 //Custom modal
 const ProfileNSettings = ({ name }) => {
   const { userInfoDisplay, setUserInfoDisplay } = useContext(LogicCntx);
+
+  const handleVideo = () => {
+    Toast.show({
+      type: "success",
+      text1: "Video call",
+      text2: "Feature will be implemented soon...",
+    });
+  };
   return userInfoDisplay ? (
     <>
       <View style={styles.background}>
@@ -18,10 +28,7 @@ const ProfileNSettings = ({ name }) => {
         <View style={styles.container}>
           <View style={styles.header}>
             <HeaderMedium>Ivan Horvat</HeaderMedium>
-            <Pressable
-              onPress={() => console.log("Video")}
-              style={styles.videoButton}
-            >
+            <Pressable onPress={() => handleVideo()} style={styles.videoButton}>
               <Feather name="video" size={20} color={white} />
             </Pressable>
           </View>

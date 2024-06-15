@@ -18,7 +18,7 @@ export default function Wordcard({ sentence, onDelete }) {
         <Text style={styles.cardText}>{sentence}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={onDelete} style={styles.deleteButton}>
-        <AntDesign name="close" size={24} color="red" />
+        <AntDesign name="delete" size={24} color="red" />
       </TouchableOpacity>
     </View>
   );
