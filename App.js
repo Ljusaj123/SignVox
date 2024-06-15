@@ -1,7 +1,7 @@
 import React from "react";
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
-import { Home, Camera, DefinedSentences } from "./pages";
+import { Home, Camera, DefinedSentences, Contacts } from "./pages";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
@@ -25,7 +25,18 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <AntDesign name="home" size={size} color={color} />
               ),
-              headerShown: false, //Fix navigation for sign in and sign up compon
+              header: () => <Header />,
+            }}
+          />
+
+          <Tab.Screen
+            name="Contacts"
+            component={Contacts}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <AntDesign name="user" size={size} color={color} />
+              ),
+              header: () => <Header />,
             }}
           />
           <Tab.Screen

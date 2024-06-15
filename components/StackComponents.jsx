@@ -25,26 +25,31 @@ const FriendsProfile = ({ image, name, date }) => {
 
   const { setUserInfoDisplay } = useContext(LogicCntx);
   return (
-    <View style={styles.friendsContainer}>
-      <Image
-        source={{
-          uri: image,
-        }}
-        style={{ width: 60, height: 60, borderRadius: 80 }}
-      />
-      <View>
-        <HeaderMedium>{name}</HeaderMedium>
-        <NormalFont style={{ color: smokewhiteExtra }}>
-          Last time called: {date}
-        </NormalFont>
-      </View>
+    <View>
+      <Pressable
+        style={styles.friendContainer}
+        onPress={() => setUserInfoDisplay(true)}
+      >
+        <Image
+          source={{
+            uri: image,
+          }}
+          style={{ width: 60, height: 60, borderRadius: 80 }}
+        />
+        <View>
+          <HeaderMedium>{name}</HeaderMedium>
+          <NormalFont style={{ color: smokewhiteExtra }}>
+            Last time called: {date}
+          </NormalFont>
+        </View>
 
-      <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>
+        {/* <View style={{ marginLeft: "auto", flexDirection: "row", gap: 20 }}>
         <Feather name="video" size={26} color={purpleExtra} />
         <Pressable onPress={() => setUserInfoDisplay(true)}>
           <Feather name="info" size={26} color={purpleExtra} />
         </Pressable>
-      </View>
+      </View> */}
+      </Pressable>
     </View>
   );
 };
@@ -59,13 +64,16 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 80,
   },
-  friendsContainer: {
+  friendContainer: {
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    borderBottomColor: purple,
+    borderColor: purple,
+    borderRadius: 10,
     height: 80,
-    borderBottomWidth: 2,
+    borderWidth: 1,
+    marginVertical: 5,
+    padding: 10,
   },
 
   ///////////////////////////////

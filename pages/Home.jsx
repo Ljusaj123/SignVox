@@ -1,117 +1,72 @@
-import React, { useContext, useState } from "react";
 import {
+  Text,
+  StatusBar,
   StyleSheet,
   View,
-  TextInput,
-  FlatList,
-  Image,
-  Pressable,
+  ScrollView,
+  ImageBackground,
 } from "react-native";
-import { HeaderFont } from "../customs/fonts";
-import { friends, recentCalls } from "../utils/homePageUtils";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Feather from "@expo/vector-icons/Feather";
-import {
-  FriendsProfile,
-  RecentCallProfile,
-} from "../components/StackComponents";
-import {
-  purpleExtra,
-  smokewhite,
-  smokewhiteExtra,
-  purple,
-  white,
-  black,
-} from "../customs/colors";
-import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
-import { LogicCntx } from "../contexes/LogicContext";
-import Header from "../components/Header";
-const Home = () => {
-  const [text, onChangeText] = useState("");
-  const { setProfileNSettingsDisplay } = useContext(LogicCntx);
+import { white } from "../customs/colors";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Title } from "../customs/fonts";
+
+export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
-      <View style={styles.searchContainer}>
-        <AntDesign
-          name="search1"
-          size={20}
-          color={smokewhiteExtra}
-          style={styles.searchIcon}
-        />
-        <TextInput
-          style={styles.search}
-          onChangeText={onChangeText}
-          value={text}
-          placeholder="Search for your friends..."
-        />
-        <Feather name="more-horizontal" size={24} color={purpleExtra} />
-      </View>
-      <View style={{ gap: 10 }}>
-        <HeaderFont>Recent calls</HeaderFont>
-        <FlatList
-          contentContainerStyle={styles.rCContainerItemStyle}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={recentCalls}
-          renderItem={({ item }) => (
-            <RecentCallProfile text={item.name} image={item.img} />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-      <View style={styles.friendsContainer}>
-        <HeaderFont style={{ marginBottom: -10 }}>Friends</HeaderFont>
-
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={friends}
-          renderItem={({ item }) => (
-            <FriendsProfile
-              name={item.name}
-              image={item.img}
-              date={item.lastTimeCalled}
-            />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <ImageBackground
+          source={{
+            uri: "https://t4.ftcdn.net/jpg/05/79/51/97/360_F_579519791_H0ym4ex4wuiUU2eTXRejPzs6tNPVjzO4.jpg",
+          }}
+          imageStyle={{ opacity: 0.07 }}
+          style={styles.background}
+        >
+          <Title>Communication for everybody</Title>
+          <View style={styles.intro}>
+            <Text style={styles.text}>
+              This application facilitates communication between deaf or mute
+              individuals and those who do not understand sign language.
+            </Text>
+            <Text style={styles.text}>
+              By utilizing a camera, the app translates sign language gestures
+              into spoken words, enabling more seamless everyday interactions.
+            </Text>
+            <Text style={styles.text}>
+              Additionally, users can predefine commonly used words or phrases,
+              which can be spoken aloud with a single click, further enhancing
+              communication efficiency.
+            </Text>
+          </View>
+        </ImageBackground>
+      </ScrollView>
     </SafeAreaView>
   );
-};
-
-export default Home;
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: white,
-    padding: 20,
-    paddingBottom: 0,
-    gap: 15,
+    paddingHorizontal: 20,
+    paddingVertical: StatusBar.currentHeight,
   },
 
-  searchIcon: { position: "absolute", zIndex: 1, top: 15, left: 10 },
-  searchContainer: {
-    alignItems: "center",
-    flexDirection: "row",
-
-    gap: 5,
-  },
-  search: {
-    backgroundColor: smokewhite,
-    flexGrow: 1,
-    borderRadius: 50,
-    paddingLeft: 40,
-    height: 50,
+  intro: {
+    paddingHorizontal: 10,
   },
 
-  rCContainerItemStyle: {
-    gap: 10,
+  text: {
+    fontSize: 17,
+    fontWeight: "500",
+    lineHeight: 35,
+    marginBottom: 15,
   },
 
-  friendsContainer: {
+  background: {
     flex: 1,
-    gap: 15,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

@@ -10,7 +10,7 @@ import {
 import { HeaderMedium, MediumFont, NormalFont } from "../../customs/fonts";
 import { Feather } from "@expo/vector-icons";
 import { LogicCntx } from "../../contexes/LogicContext";
-import { black, purple, purpleExtra } from "../../customs/colors";
+import { black, purple, purpleExtra, white } from "../../customs/colors";
 
 //Custom modal
 const ProfileNSettings = ({ name }) => {
@@ -25,28 +25,29 @@ const ProfileNSettings = ({ name }) => {
         <View style={styles.container}>
           <View style={styles.header}>
             <HeaderMedium>Ivan Horvat</HeaderMedium>
-            <Pressable onPress={() => console.log("Video")}>
-              <Feather name="video" size={26} color={purpleExtra} />
+            <Pressable
+              onPress={() => console.log("Video")}
+              style={styles.videoButton}
+            >
+              <Feather name="video" size={20} color={white} />
             </Pressable>
           </View>
+
           <View style={styles.mainContainer}>
             <View style={styles.pfpContainer}>
               <Image
                 source={{
-                  uri: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  uri: "https://w7.pngwing.com/pngs/490/157/png-transparent-male-avatar-boy-face-man-user-flat-classy-users-icon.png",
                 }}
                 style={{ width: 100, height: 100, borderRadius: 50 }}
               />
-              <MediumFont style={{ marginTop: 5 }}>+09112345</MediumFont>
+              <MediumFont style={{ marginTop: 5 }}>+3859112345</MediumFont>
               {/* Telephone number or name */}
             </View>
             <View style={styles.bioContainer}>
               <ScrollView showsVerticalScrollIndicator={false}>
                 <NormalFont style={{ fontWeight: "500" }}>
                   Bio: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Pariatur omnis commodi adipisci quis neque eaque cupiditate,
-                  eveniet obcaecati impedit, veniam ut sed tenetur dolore fuga,
-                  ex cum sapiente possimus saepe!
                 </NormalFont>
               </ScrollView>
             </View>
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
+    paddingVertical: 10,
     gap: 20,
   },
   pfpContainer: {
@@ -112,5 +113,11 @@ const styles = StyleSheet.create({
   bioContainer: {
     flex: 1,
     width: "100%",
+  },
+
+  videoButton: {
+    borderRadius: 50,
+    backgroundColor: purpleExtra,
+    padding: 7,
   },
 });

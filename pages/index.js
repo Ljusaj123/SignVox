@@ -1,5 +1,6 @@
-import Home from "./Home";
+import Contacts from "./Contacts";
 import Camera from "./Camera";
 import DefinedSentences from "./DefinedSentences";
+import Home from "./Home";
 
-export { Home, Camera, DefinedSentences };
+export { Home, Camera, DefinedSentences, Contacts };

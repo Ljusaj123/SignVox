@@ -6,16 +6,21 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
-  Image,
-  Pressable,
   Modal,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Wordcard from "../components/Wordcard";
 import { SafeAreaView } from "react-native-safe-area-context";
 import basicSentences from "../utils/basicSentences";
-import { StatusBar } from "expo-status-bar";
 import Toast from "react-native-toast-message";
+import {
+  smokewhite,
+  smokewhiteExtra,
+  purpleExtra,
+  white,
+} from "../customs/colors";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { Title } from "../customs/fonts";
 
 export default function DefinedSentences() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -83,11 +88,7 @@ export default function DefinedSentences() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.sectionText}>
-        Here is a list of your pre-defined sentences that you can use to
-        communicate. Just pick one card and click on it to read it out loud.
-      </Text>
-
+      <Title>Your sentences</Title>
       <View style={styles.formContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -116,24 +117,35 @@ export default function DefinedSentences() {
               />
               <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={handleSave}>
-                  <Text>Save</Text>
+                  <Text style={styles.buttonText}>Save</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={toggleModal}>
-                  <Text>Cancel</Text>
+                <TouchableOpacity
+                  style={styles.cancelButton}
+                  onPress={toggleModal}
+                >
+                  <Text style={styles.buttonText}>Cancel</Text>
                 </TouchableOpacity>
               </View>
             </View>
           </View>
         </Modal>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Search here"
-          value={searchQuery}
-          onChangeText={handleSearch}
-        />
+        <View style={styles.searchContainer}>
+          <AntDesign
+            name="search1"
+            size={20}
+            color={smokewhiteExtra}
+            style={styles.searchIcon}
+          />
+          <TextInput
+            style={styles.search}
+            placeholder="Search sentences..."
+            value={searchQuery}
+            onChangeText={handleSearch}
+          />
+        </View>
       </View>
 
-      <Text style={styles.noDataText}>{noDataText}</Text>
+      {noDataText ? <Text style={styles.noDataText}>{noDataText}</Text> : null}
 
       <FlatList
         style={styles.listContainer}
@@ -156,79 +168,105 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    paddingBottom: 0,
     backgroundColor: "#fff",
     gap: 15,
   },
-  sectionText: {
-    fontSize: 20,
-    color: "#000",
-    marginBottom: 20,
-  },
-  textInput: {
+
+  search: {
+    backgroundColor: smokewhite,
+    flex: 1,
+    borderRadius: 50,
+    paddingLeft: 40,
+    height: 50,
+    minWidth: 250,
     borderWidth: 1,
-    backgroundColor: "#fff",
-    borderRadius: 15,
-    padding: 10,
-    width: "100%",
-    minWidth: 200,
-    maxWidth: 300,
-    minHeight: 45,
-    borderColor: "black",
-    borderRadius: 10,
-    marginVertical: 10,
+  },
+
+  searchContainer: {
+    flexDirection: "row",
+    gap: 5,
+    flex: 1,
+  },
+
+  searchIcon: {
+    position: "absolute",
+    zIndex: 1,
+    top: 15,
+    left: 10,
+  },
+
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 10,
   },
   button: {
-    backgroundColor: "#435ABF",
+    backgroundColor: purpleExtra,
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderRadius: 15,
   },
+
+  cancelButton: {
+    backgroundColor: "#777",
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 15,
+  },
+
+  buttonText: {
+    color: "#fff",
+  },
+
   formContainer: {
     flexDirection: "row",
-    justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
     gap: 5,
     borderBottomWidth: 1,
     borderBottomColor: "#8197B7",
   },
+
   listContainer: {
     flex: 1,
     marginTop: 20,
   },
+
   modalOverlay: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
+
   modalContainer: {
     width: 300,
+    height: 200,
     padding: 20,
-    backgroundColor: "#ECF2FF",
+    backgroundColor: white,
     borderRadius: 10,
+    gap: 15,
   },
+
   modalTitle: {
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: "bold",
     marginBottom: 10,
     textAlign: "center",
   },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    gap: 10,
-  },
-  input: {
-    padding: 7,
-    borderColor: "black",
-    borderRadius: 10,
-    borderWidth: 2,
-    marginVertical: 10,
+
+  textInput: {
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    backgroundColor: smokewhite,
+    flex: 1,
+    borderRadius: 20,
+    borderWidth: 1,
   },
 
   noDataText: {
     textAlign: "center",
     fontSize: 20,
-    marginTop: 20,
   },
 });
