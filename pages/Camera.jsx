@@ -65,7 +65,7 @@ export default function Camera() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.videoContainer}>
         <CameraView facing={facing} style={styles.camera}>
           <TouchableOpacity
@@ -79,7 +79,7 @@ export default function Camera() {
           </TouchableOpacity>
         </CameraView>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

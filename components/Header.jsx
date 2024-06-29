@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import { View, Image, Pressable, StyleSheet } from "react-native";
+import { Image, Pressable, StyleSheet } from "react-native";
 import { LogicCntx } from "../contexes/LogicContext";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function Header() {
   const { setProfileNSettingsDisplay } = useContext(LogicCntx);
 
   return (
-    <View style={styles.header}>
+    <SafeAreaView style={styles.header}>
       <Image
         source={require("../assets/SignVoxLogoImg.png")}
         style={{ height: 85, width: 170, objectFit: "contain" }}
@@ -23,7 +24,7 @@ function Header() {
           }}
         />
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -31,7 +32,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   header: {
-    padding: 20,
+    paddingHorizontal: 20,
     paddingBottom: 0,
     backgroundColor: "#fff",
     justifyContent: "space-between",

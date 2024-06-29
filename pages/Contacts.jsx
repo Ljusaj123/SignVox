@@ -42,7 +42,7 @@ const Contacts = () => {
     }
   };
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.searchContainer}>
         <AntDesign
           name="search1"
@@ -91,7 +91,7 @@ const Contacts = () => {
           keyExtractor={(item) => item.id}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
   searchContainer: {
     alignItems: "center",
     flexDirection: "row",
-
     gap: 5,
   },
   search: {

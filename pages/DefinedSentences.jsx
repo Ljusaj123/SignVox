@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Wordcard from "../components/Wordcard";
-import { SafeAreaView } from "react-native-safe-area-context";
 import basicSentences from "../utils/basicSentences";
 import Toast from "react-native-toast-message";
 import {
@@ -88,7 +87,7 @@ export default function DefinedSentences() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Title>Your sentences</Title>
       <View style={styles.formContainer}>
         <TouchableOpacity
@@ -164,7 +163,7 @@ export default function DefinedSentences() {
         )}
         contentContainerStyle={{ paddingBottom: 20 }}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 
