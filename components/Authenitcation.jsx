@@ -1,4 +1,10 @@
-import { Image, StyleSheet, TextInput, View, Pressable } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  TextInput,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   HeaderFont,
@@ -12,10 +18,14 @@ import {
   white,
   blueExtra,
 } from "../customs/colors";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@react-navigation/native";
 
 const Authenitcation = ({ isSignUp }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -33,7 +43,7 @@ const Authenitcation = ({ isSignUp }) => {
           source={require("../assets/SignVoxLogoImg.png")}
           style={styles.logo}
         />
-        <HeaderFont style={{ textDecorationLine: "none" }}>
+        <HeaderFont style={{ textDecorationLine: "none", marginTop: -5 }}>
           {isSignUp ? "Sign up" : "Sign in"}
         </HeaderFont>
         <NormalFont
@@ -41,6 +51,7 @@ const Authenitcation = ({ isSignUp }) => {
             color: smokewhiteExtra,
             width: isSignUp ? 250 : 300,
             textAlign: "center",
+            marginTop: -5,
           }}
         >
           {isSignUp
@@ -54,55 +65,59 @@ const Authenitcation = ({ isSignUp }) => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your username..."
+                onChangeText={setUsername}
               />
             </>
           ) : null}
           <MediumFont>Email:</MediumFont>
-          <TextInput style={styles.input} placeholder="Enter your email..." />
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email..."
+            onChangeText={setEmail}
+          />
           <MediumFont>Password:</MediumFont>
           <TextInput
             style={styles.input}
             placeholder="Enter your password..."
+            onChangeText={setPassword}
           />
         </View>
         {isSignUp ? (
-          <Pressable
+          <TouchableOpacity
             style={{ width: "90%", marginTop: 10 }}
             onPress={() => {
-              console.log("Sign up"); // add functionality
+              console.log("Sign up"); //Add funtunality
             }}
           >
             <HeaderMedium style={styles.button}>Sign up</HeaderMedium>
-          </Pressable>
+          </TouchableOpacity>
         ) : (
-          <Pressable
+          <TouchableOpacity
             style={{ width: "90%", marginTop: 10 }}
             onPress={() => {
               console.log("Sign in"); // add functionality
             }}
           >
             <HeaderMedium style={styles.button}>Sign in</HeaderMedium>
-          </Pressable>
+          </TouchableOpacity>
         )}
         {isSignUp ? (
           <View style={{ flexDirection: "row" }}>
             <NormalFont>Have an account? </NormalFont>
-            <Link to={{ screen: "" }}>
-              {/* This will be linked to sign in page  */}
-              <NormalFont style={{ textDecorationLine: "underline" }}>
-                Sign in!
-              </NormalFont>
-            </Link>
+
+            {/* This will be linked to sign in page  */}
+            <NormalFont style={{ textDecorationLine: "underline" }}>
+              Sign in!
+            </NormalFont>
           </View>
         ) : (
           <View style={{ flexDirection: "row" }}>
             <NormalFont>Don't have an account? </NormalFont>
-            <Link to={{ screen: "" }}>
-              {/* This will be linked to sign up page  */}
-              <NormalFont style={{ textDecorationLine: "underline" }}>
-                Sign up!
-              </NormalFont>
-            </Link>
+
+            {/* This will be linked to sign up page  */}
+            <NormalFont style={{ textDecorationLine: "underline" }}>
+              Sign up!
+            </NormalFont>
           </View>
         )}
       </View>
@@ -115,7 +130,8 @@ export default Authenitcation;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 50,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
@@ -142,7 +158,7 @@ const styles = StyleSheet.create({
   logo: {
     objectFit: "contain",
     width: 200,
-    height: 70,
+    height: 80,
     alignSelf: "top",
   },
   form: {

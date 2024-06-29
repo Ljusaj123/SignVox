@@ -14,7 +14,6 @@ import {
   smokewhiteExtra,
   white,
 } from "../customs/colors";
-import { SafeAreaView } from "react-native-safe-area-context"; //this works accross all devices, same import from react native works only for IOS
 import { LogicCntx } from "../contexes/LogicContext";
 
 const Contacts = () => {
@@ -22,7 +21,7 @@ const Contacts = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(friends);
   const [noDataText, setNoDataText] = useState("");
-
+  const [searchActive, setSearchActive] = useState(false);
   const handleSearch = (query) => {
     setSearchQuery(query);
     if (query) {
@@ -55,22 +54,26 @@ const Contacts = () => {
           placeholder="Search friends..."
           onChangeText={handleSearch}
           value={searchQuery}
+          onFocus={() => setSearchActive(true)}
+          onBlur={() => setSearchActive(false)}
         />
         <Feather name="more-horizontal" size={24} color={blueExtra} />
       </View>
-      <View style={{ gap: 10 }}>
-        <HeaderFont>Recent calls</HeaderFont>
-        <FlatList
-          contentContainerStyle={styles.rCContainerItemStyle}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={recentCalls}
-          renderItem={({ item }) => (
-            <RecentCallProfile text={item.name} image={item.img} />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
+      {!searchActive && searchQuery.length === 0 ? (
+        <View style={{ gap: 10 }}>
+          <HeaderFont>Recent calls</HeaderFont>
+          <FlatList
+            contentContainerStyle={styles.rCContainerItemStyle}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={recentCalls}
+            renderItem={({ item }) => (
+              <RecentCallProfile text={item.name} image={item.img} />
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      ) : null}
       <View style={styles.friendsContainer}>
         <HeaderFont style={{ marginBottom: -10 }}>Friends</HeaderFont>
 

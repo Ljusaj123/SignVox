@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+
 import Toast from "react-native-toast-message";
 import LogicContext from "./contexes/LogicContext";
 import UserInfo from "./pages/modals/UserInfo";
@@ -25,6 +26,7 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={() => ({
+            tabBarHideOnKeyboard: true,
             tabBarActiveTintColor: blueExtra,
             tabBarStyle: {
               height: 60,
@@ -99,7 +101,7 @@ AppRegistry.registerComponent(appName, () => Main);
 // import SignUp from "./pages/SignUp"; //group this
 // const App = () => {
 //   return <SignUp />;
-//   return <SignIn />;
+//   // return <SignIn />;
 // };
 
 // export default App;
